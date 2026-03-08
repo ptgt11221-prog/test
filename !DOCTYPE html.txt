@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYPER//NOISE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        /* Ombres dures typiques du Néobrutalisme */
+        .brutal-shadow {
+            box-shadow: 12px 12px 0px 0px #000;
+            transition: all 0.2s ease-in-out;
+        }
+        .brutal-shadow:hover {
+            box-shadow: 4px 4px 0px 0px #000;
+            transform: translate(8px, 8px);
+        }
+
+        /* Animation de texte défilant (Marquee) */
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: flex;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 10s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        /* Animations d'apparition au scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(100px) rotate(-5deg);
+            transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) rotate(0deg);
+        }
+    </style>
+</head>
+<body class="bg-[#FFE500] text-black overflow-x-hidden selection:bg-[#FF00FF] selection:text-white border-8 border-black m-2 md:m-4">
+
+    <nav class="fixed top-4 left-4 right-4 z-50 bg-white border-4 border-black brutal-shadow flex justify-between items-center p-4">
+        <div class="text-2xl font-black tracking-tighter bg-[#00FFFF] px-2 border-2 border-black">
+            HYPER//NOISE
+        </div>
+        <div class="hidden md:flex space-x-6 text-xl uppercase">
+            <a href="#about" class="hover:bg-[#FF00FF] hover:text-white px-2 border-2 border-transparent hover:border-black transition-colors">Manifesto</a>
+            <a href="#work" class="hover:bg-[#00FFFF] px-2 border-2 border-transparent hover:border-black transition-colors">Projets</a>
+        </div>
+        <a href="#contact" class="bg-[#FF00FF] text-white px-6 py-2 border-4 border-black brutal-shadow text-xl uppercase">
+            Crier
+        </a>
+    </nav>
+
+    <header class="min-h-screen flex flex-col justify-center items-center pt-24 pb-12 px-4 relative">
+        <div class="absolute top-1/4 left-10 w-32 h-32 bg-[#FF00FF] border-4 border-black brutal-shadow rounded-full animate-bounce z-0 hidden lg:block"></div>
+        <div class="absolute bottom-1/4 right-10 w-48 h-48 bg-[#00FFFF] border-4 border-black brutal-shadow z-0 hidden lg:block" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+
+        <h1 class="text-[12vw] leading-none uppercase text-center z-10 break-words drop-shadow-[8px_8px_0px_rgba(0,0,0,1)] text-white">
+            <span class="bg-black px-4 border-4 border-black transform -rotate-2 inline-block">Design</span><br>
+            <span class="bg-[#FF00FF] text-black px-4 border-4 border-black transform rotate-2 inline-block mt-4">Sauvage</span>
+        </h1>
+    </header>
+
+    <div class="bg-black text-white text-4xl py-4 border-y-8 border-black marquee z-20 relative transform -rotate-1 scale-105">
+        <span>CASSES LES CODES /// PAS DE RÈGLES /// UI BRUTAL /// CSS EST TON TERRAIN DE JEU /// </span>
+    </div>
+
+    <section id="about" class="py-32 px-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-white border-8 border-black p-8 brutal-shadow reveal">
+                <h2 class="text-6xl uppercase mb-6 bg-[#00FFFF] inline-block px-2 border-4 border-black">L'Anti-Design</h2>
+                <p class="text-2xl leading-relaxed font-bold">
+                    Oublie les ombres douces et les dégradés subtils. Le web est devenu trop ennuyeux. Il est temps de remettre du chaos, des bordures épaisses et des couleurs qui brûlent la rétine.
+                </p>
+            </div>
+            <div class="bg-[#FF00FF] text-white border-8 border-black p-8 brutal-shadow reveal" style="transition-delay: 0.2s;">
+                <h2 class="text-6xl uppercase mb-6 bg-black inline-block px-2 border-4 border-white text-[#FFE500]">0% Subtil</h2>
+                <p class="text-2xl leading-relaxed font-bold">
+                    L'accessibilité reste, mais la politesse visuelle dégage. Si l'utilisateur ne remarque pas ton bouton, c'est que ton ombre n'est pas assez dure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-4 bg-[#00FFFF] border-t-8 border-black text-center reveal">
+        <h2 class="text-7xl uppercase mb-12 drop-shadow-[6px_6px_0px_rgba(0,0,0,1)] text-white bg-black inline-block px-6 py-2 border-4 border-black">
+            Prêt à tout casser ?
+        </h2>
+        <form class="max-w-3xl mx-auto flex flex-col md:flex-row gap-4 justify-center">
+            <input type="email" placeholder="TON EMAIL ICI..." class="w-full md:w-2/3 bg-white border-8 border-black p-6 text-2xl placeholder-black font-bold focus:outline-none focus:bg-[#FFE500] transition-colors">
+            <button type="submit" class="w-full md:w-1/3 bg-[#FF00FF] text-white border-8 border-black p-6 text-2xl uppercase brutal-shadow hover:bg-black hover:text-[#00FFFF]">
+                Go !
+            </button>
+        </form>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Joue l'animation une seule fois
+                    }
+                });
+            }, {
+                threshold: 0.15, // Se déclenche quand 15% de l'élément est visible
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
+</body>
+</html>
